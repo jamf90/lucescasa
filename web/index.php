@@ -1,7 +1,6 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
-date_default_timezone_set('America/Bogota');
 
 require('../vendor/autoload.php');
 
@@ -33,21 +32,9 @@ $app->post('/enviarDato', function (Request $request) use ($app) {
 
 
 //Ruta de demostración, se recibe(n) dato(s) y se manipulan
-$app->post('/guardarDato', function (Request $request) use ($app) {
-
-	$Voltbat = $request->get('Voltbat');
-	$tabla = $request->get('tabla');
-
-	$dbconn = pg_pconnect("host=ec2-54-152-40-168.compute-1.amazonaws.com port=5432 dbname=da5l2p8fhao45b user=rvjdadbcfsozcx password=d568c86e4a84d477292656b6718984c408f607f5459bca9b6eaf550604dfcf66;
-
-	$data = array(
-		"Fecha"=>date('Y-m-d H:i:s'),
-		"Voltpanel" => $request->get('Voltpanel'),
-		"Voltbat" => $Voltbat
-		);
-
-	$respuesta = pg_insert($dbconn, $tabla, $data);
-   	
+$app->post('/modificarDato', function (Request $request) use ($app) {
+   	$nombre = $request->get('nombre');
+	$respuesta = "Hola " .$nombre;
    	return $respuesta;
 });
 
