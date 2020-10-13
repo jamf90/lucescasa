@@ -51,12 +51,6 @@ $app->post('/guardarDato', function (Request $request) use ($app) {
    	return $respuesta;
 });
 
-//Ruta de demostración, se recibe(n) dato(s) y se manipulan
-$app->post('/modificarDato', function (Request $request) use ($app) {
-   	$nombre = $request->get('nombre');
-	$respuesta = "Hola " .$nombre;
-   	return $respuesta;
-});
 
 //Ruta de demostración, se recibe(n) dato(s) y se manipulan
 $app->post('/postArduino', function (Request $request) use ($app) {
