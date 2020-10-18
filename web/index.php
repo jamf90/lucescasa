@@ -65,7 +65,7 @@ $app->post('/arduinoenvia', function (Request $request) use ($app) {
 	$dbconn = pg_pconnect("host=ec2-54-152-40-168.compute-1.amazonaws.com port=5432 dbname=da5l2p8fhao45b user=rvjdadbcfsozcx password=d568c86e4a84d477292656b6718984c408f607f5459bca9b6eaf550604dfcf66");
 
 	$data = array(
-		"Fecha"=>date('Y-m-d H:i:s'),
+		"fecha"=>date('Y-m-d H:i:s'),
 		"VoltBat" => $VoltBat,
 		"VoltPanel" => $VoltPanel,
 		"IPanel" => $IPanel,
