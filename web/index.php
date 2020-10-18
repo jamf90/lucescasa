@@ -53,11 +53,11 @@ $app->post('/guardarDato', function (Request $request) use ($app) {
 
 $app->post('/arduinoenvia', function (Request $request) use ($app) {
 
-	$Voltbat = $request->get('Voltbat');
-	$Voltpanel = $request->get('Voltpanel');
-	$Ipanel = $request->get('Ipanel');
-	$Tem1 = $request->get('Tem1');
-	$Tem2 = $request->get('Tem2');
+	$VoltBat = $request->get('VoltBat');
+	$VoltPanel = $request->get('VoltPanel');
+	$IPanel = $request->get('IPanel');
+	$Temp1 = $request->get('Temp1');
+	$Temp2 = $request->get('Temp2');
 	$Potencia = $request->get('Potencia');
 	$tabla = $request->get('tabla');
 	
@@ -66,11 +66,11 @@ $app->post('/arduinoenvia', function (Request $request) use ($app) {
 
 	$data = array(
 		"Fecha"=>date('Y-m-d H:i:s'),
-		"Voltbat" => $Voltbat,
-		"Voltpanel" => $Voltpanel,
-		"Ipanel" => $Ipanel,
-		"Tem1" => $Tem1,
-		"Tem2" => $Tem2,
+		"VoltBat" => $VoltBat,
+		"VoltPanel" => $VoltPanel,
+		"IPanel" => $IPanel,
+		"Temp1" => $Temp1,
+		"Temp2" => $Temp2,
 		"Potencia" => $Potencia,
 		);
 
