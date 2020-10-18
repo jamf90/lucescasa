@@ -56,7 +56,7 @@ $app->post('/guardarlectura', function (Request $request) use ($app) {
 
 	$corriente = $request->get('corriente');
 	$voltaje = $request->get('voltaje');
-	$tabla = $request->get('Lecturas_sistema');
+	$tabla = $request->get('tabla');
 	$lugar = $request->get('lugar');
 
 	$dbconn = pg_pconnect("host=ec2-54-152-40-168.compute-1.amazonaws.com port=5432 dbname=da5l2p8fhao45b user=rvjdadbcfsozcx password=d568c86e4a84d477292656b6718984c408f607f5459bca9b6eaf550604dfcf66");
