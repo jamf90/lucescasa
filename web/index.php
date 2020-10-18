@@ -51,33 +51,28 @@ $app->post('/guardarDato', function (Request $request) use ($app) {
    	return $respuesta;
 });
 
-$app->post('/arduinoenvia', function (Request $request) use ($app) {
 
-	$VoltBat = $request->get('VoltBat');
-	$VoltPanel = $request->get('VoltPanel');
-	$IPanel = $request->get('IPanel');
-	$Temp1 = $request->get('Temp1');
-	$Temp2 = $request->get('Temp2');
-	$Potencia = $request->get('Potencia');
+$app->post('/guardarlectura', function (Request $request) use ($app) {
+
+	$corriente = $request->get('corriente');
+	$voltaje = $request->get('voltaje');
 	$tabla = $request->get('tabla');
-	
+	$lugar = $request->get('lugar');
 
 	$dbconn = pg_pconnect("host=ec2-54-152-40-168.compute-1.amazonaws.com port=5432 dbname=da5l2p8fhao45b user=rvjdadbcfsozcx password=d568c86e4a84d477292656b6718984c408f607f5459bca9b6eaf550604dfcf66");
 
 	$data = array(
 		"fecha"=>date('Y-m-d H:i:s'),
-		"VoltBat" => $VoltBat,
-		"VoltPanel" => $VoltPanel,
-		"IPanel" => $IPanel,
-		"Temp1" => $Temp1,
-		"Temp2" => $Temp2,
-		"Potencia" => $Potencia,
+		"corriente" => $corriente,
+		"voltaje" => $voltaje,
+		"lugar" => $lugar
 		);
 
 	$respuesta = pg_insert($dbconn, $tabla, $data);
    	
    	return $respuesta;
 });
+
 
 
 //Ruta de demostración, se recibe(n) dato(s) y se manipulan
