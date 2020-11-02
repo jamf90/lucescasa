@@ -1,6 +1,7 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 date_default_timezone_set('America/Bogota');
 
 require('../vendor/autoload.php');
